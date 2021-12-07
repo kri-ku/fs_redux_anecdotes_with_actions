@@ -1,16 +1,18 @@
 describe('Anecdote app', function() {
 
-  beforeEach(function() {
+  /*   beforeEach(function() {
     cy.visit('http://localhost:5000')
-  })
+  }) */
 
   it('page can be opened', function(){
+    cy.visit('http://localhost:5000')
 
     cy.contains('Anecdotes')
     cy.contains('create new')
   })
 
   it('anecdote can be added', function(){
+    cy.visit('http://localhost:5000')
 
     cy.get('input:last').type('new anecdote')
     cy.get('button').contains('create').click()
