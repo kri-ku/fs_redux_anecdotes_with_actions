@@ -33,7 +33,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "sleepy-ocean-20338"
           heroku_email: "kristiinakumila@myy.haaga-helia.fi"
-          healthcheck: "https://sleepy-ocean-20338.herokuapp.com//health"
-          checkstring: "ok"
-          delay: 5
-          rollbackonhealthcheckfailed: true
+          #healthcheck: "https://sleepy-ocean-20338.herokuapp.com//health"
+          #checkstring: "ok"
+          #delay: 5
+          #rollbackonhealthcheckfailed: true
