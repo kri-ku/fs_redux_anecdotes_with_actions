@@ -13,6 +13,14 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
+app.get('/health', (reg, res) => {
+  res.send('ok')
+} )
+
+app.get('/version', (reg, res) => {
+  res.send('1')
+})
+
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`)
 })
