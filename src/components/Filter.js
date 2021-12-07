@@ -4,45 +4,45 @@ import { setFilter, showAll } from '../reducers/filterReducer'
 
 const Filter = (props) => {
 
-    const handleChange = (event) => {
-        event.preventDefault()
-        if (event.target.value === '') {
-            props.showAll()
-        } else {
-            props.setFilter(event.target.value)
-        }
+  const handleChange = (event) => {
+    event.preventDefault()
+    if (event.target.value === '') {
+      props.showAll()
+    } else {
+      props.setFilter(event.target.value)
     }
+  }
 
-    const style = {
-        marginBottom: 10
-    }
+  const style = {
+    marginBottom: 10
+  }
 
-    return (
-        <div style={style}>
+  return (
+    <div style={style}>
             filter
-            <input
-                onChange={handleChange}
-                name='filterable'></input>
-        </div>
-    )
+      <input
+        onChange={handleChange}
+        name='filterable'></input>
+    </div>
+  )
 
 }
 
 const mapStateToProps = (state) => {
-    return {
-        filter: state.filter
-    }
+  return {
+    filter: state.filter
+  }
 
 }
 
 const mapDispatchToProps = {
-    setFilter,
-    showAll
+  setFilter,
+  showAll
 }
 
 const connectedFilter = connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Filter)
 
 export default connectedFilter

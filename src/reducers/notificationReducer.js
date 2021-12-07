@@ -1,40 +1,39 @@
 let timer
 
 const notificationReducer = (state = '', action) => {
-    switch (action.type) {
-        case 'CHANGE_MESSAGE':
-            return action.message
-        case 'RESET_MESSAGE':
-            const mes = ''
-            return mes
+  switch (action.type) {
+  case 'CHANGE_MESSAGE':
+    return action.message
+  case 'RESET_MESSAGE':
+    return ''
 
-        default: return state
-    }
+  default: return state
+  }
 }
 
 export const setNotification = (message, time) => {
 
 
-    return async dispatch => {
+  return async dispatch => {
 
-        if (message !== '') {
-            clearTimeout(timer)
-        }
-
-        dispatch({
-            type: 'CHANGE_MESSAGE',
-            message: message
-        })
-
-        timer = setTimeout(() => {
-            dispatch({
-                type: 'RESET_MESSAGE'
-            })
-        }, time)
-
-
-
+    if (message !== '') {
+      clearTimeout(timer)
     }
+
+    dispatch({
+      type: 'CHANGE_MESSAGE',
+      message: message
+    })
+
+    timer = setTimeout(() => {
+      dispatch({
+        type: 'RESET_MESSAGE'
+      })
+    }, time)
+
+
+
+  }
 
 }
 

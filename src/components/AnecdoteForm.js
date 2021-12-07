@@ -5,33 +5,33 @@ import { setNotification } from '../reducers/notificationReducer'
 
 const AnecdoteForm = (props) => {
 
-    const addAnecdote = async (event) => {
-        event.preventDefault()
-        const content = event.target.anecdote.value
-        event.target.anecdote.value = ''
-        props.addNew(content)
-        props.setNotification(`you added '${content}'`, 5000)
-    }
+  const addAnecdote = async (event) => {
+    event.preventDefault()
+    const content = event.target.anecdote.value
+    event.target.anecdote.value = ''
+    props.addNew(content)
+    props.setNotification(`you added '${content}'`, 5000)
+  }
 
-    return (
-        <div>
-            <h2>create new</h2>
-            <form onSubmit={addAnecdote}>
-                <div><input name='anecdote' /></div>
-                <button>create</button>
-            </form>
-        </div>
-    )
+  return (
+    <div>
+      <h2>create new</h2>
+      <form onSubmit={addAnecdote}>
+        <div><input name='anecdote' /></div>
+        <button>create</button>
+      </form>
+    </div>
+  )
 }
 
 const mapDispatchToProps = {
-    addNew,
-    setNotification
+  addNew,
+  setNotification
 }
 
 const connectedFilter = connect(
-    null,
-    mapDispatchToProps
+  null,
+  mapDispatchToProps
 )(AnecdoteForm)
 
 export default connectedFilter

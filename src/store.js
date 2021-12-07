@@ -7,14 +7,14 @@ import notificationReducer from './reducers/notificationReducer'
 import filterReducer from './reducers/filterReducer'
 
 const reducer = combineReducers({
-    anecdotes: anecdoteReducer,
-    notification: notificationReducer,
-    filter: filterReducer
+  anecdotes: anecdoteReducer,
+  notification: notificationReducer,
+  filter: filterReducer
 })
 
 const store = createStore(
-    reducer,
-    composeWithDevTools(applyMiddleware(thunk))
+  reducer,
+  composeWithDevTools(applyMiddleware(thunk))
 )
 
 export default store
