@@ -19,7 +19,7 @@ const App = () => {
       <Filter></Filter>
       <Notification></Notification>
       <AnecdoteList></AnecdoteList>
-      <AnecdoteForm></AnecdoteForm>
+      <AnecdoteForm id='anecdote-form'></AnecdoteForm>
 
     </div>
   )
